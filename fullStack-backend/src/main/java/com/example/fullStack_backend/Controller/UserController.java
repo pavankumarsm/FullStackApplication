@@ -48,8 +48,7 @@ public class UserController {
 					user.setName(newUser.getName());
 					user.setEmail(newUser.getEmail());
 					return userRepository.save(user);
-				}).orElseThrow(()->new UserNotFoundException(id));
-				
+				}).orElseThrow(()->new UserNotFoundException(id));	
 	}
 	
 	@DeleteExchange("/user/{id}")
@@ -59,8 +58,6 @@ public class UserController {
 		}
 		userRepository.deleteById(id);
 		return "User with id"+id+"has been delete success";
-		
 	}
-	
-
 }
+
